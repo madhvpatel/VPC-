@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Financial Relationship Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">💰</div>
+                    <h1>FinanceAI</h1>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview">
+                    <span class="nav-icon">📊</span>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item" data-section="portfolio">
+                    <span class="nav-icon">💼</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="#" class="nav-item" data-section="transactions">
+                    <span class="nav-icon">💳</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="#" class="nav-item" data-section="chat">
+                    <span class="nav-icon">💬</span>
+                    <span>AI Advisor</span>
+                </a>
+                <a href="#" class="nav-item" data-section="goals">
+                    <span class="nav-icon">🎯</span>
+                    <span>Goals</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">AT</div>
+                    <div class="user-info">
+                        <div class="user-name">Alex Thompson</div>
+                        <div class="user-status">Premium Member</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <h2 class="page-title">Financial Overview</h2>
+                    <div class="header-actions">
+                        <button class="btn-secondary">
+                            <span>⚙️</span> Settings
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Overview Section -->
+            <div class="content-section active" id="overview-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Total Portfolio Value</div>
+                            <div class="stat-value" id="total-portfolio">$0.00</div>
+                            <div class="stat-change positive">+12.5% this month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Total Gain/Loss</div>
+                            <div class="stat-value" id="total-gain">$0.00</div>
+                            <div class="stat-change positive">+8.3%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">💵</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Monthly Spending</div>
+                            <div class="stat-value" id="monthly-spending">$0.00</div>
+                            <div class="stat-change">Budget: $5,200</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">💳</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Available Cash</div>
+                            <div class="stat-value" id="available-cash">$60,500</div>
+                            <div class="stat-change">Ready to invest</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insights-section">
+                    <h3>AI Insights & Recommendations</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">💡</span>
+                                <strong>Portfolio Diversification</strong>
+                            </div>
+                            <p>Your tech exposure is 65%. Consider adding healthcare or utility stocks for balance.</p>
+                            <button class="btn-link">Ask AI about this →</button>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">🎯</span>
+                                <strong>Goal Progress</strong>
+                            </div>
+                            <p>On track for emergency fund goal! Only $20k remaining to reach your target.</p>
+                            <button class="btn-link">View details →</button>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">⚠️</span>
+                                <strong>Spending Alert</strong>
+                            </div>
+                            <p>Dining expenses are 20% over budget this month. Review recent transactions?</p>
+                            <button class="btn-link">Analyze spending →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Section -->
+            <div class="content-section" id="chat-section">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-title">
+                            <h3>💬 Chat with Your AI Financial Advisor</h3>
+                            <p class="chat-subtitle">Ask me anything about your finances, investments, or spending</p>
+                        </div>
+                        <button class="btn-secondary" id="clear-chat">Clear Chat</button>
+                    </div>
+                    
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="message-author">FinanceAI</div>
+                                <div class="message-text">
+                                    Hello! I'm your AI Financial Relationship Manager. I can help you:
+                                    <ul>
+                                        <li>Analyze your portfolio performance</li>
+                                        <li>Review spending patterns</li>
+                                        <li>Get market insights on your holdings</li>
+                                        <li>Plan for your financial goals</li>
+                                        <li>Receive personalized recommendations</li>
+                                    </ul>
+                                    What would you like to know?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="quick-prompts">
+                            <button class="quick-prompt" data-prompt="How is my portfolio performing?">📊 Portfolio Performance</button>
+                            <button class="quick-prompt" data-prompt="Analyze my spending patterns">💳 Spending Analysis</button>
+                            <button class="quick-prompt" data-prompt="What are current prices for my holdings?">📈 Market Update</button>
+                            <button class="quick-prompt" data-prompt="Give me personalized financial insights">💡 Get Insights</button>
+                        </div>
+                        <div class="chat-input-wrapper">
+                            <textarea 
+                                id="chat-input" 
+                                placeholder="Ask about your finances..." 
+                                rows="1"></textarea>
+                            <button id="send-btn" class="btn-primary">
+                                <span>Send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Section -->
+            <div class="content-section" id="portfolio-section">
+                <h3>Stock Holdings</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Company</th>
+                                <th>Shares</th>
+                                <th>Avg Cost</th>
+                                <th>Current Price</th>
+                                <th>Total Value</th>
+                                <th>Gain/Loss</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-table">
+                            <tr>
+                                <td colspan="7" class="loading">Loading portfolio data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 style="margin-top: 2rem;">Mutual Funds</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Fund Name</th>
+                                <th>Ticker</th>
+                                <th>Units</th>
+                                <th>Purchase NAV</th>
+                                <th>Current NAV</th>
+                                <th>Total Value</th>
+                                <th>Gain/Loss</th>
+                            </tr>
+                        </thead>
+                        <tbody id="funds-table">
+                            <tr>
+                                <td colspan="7" class="loading">Loading fund data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Transactions Section -->
+            <div class="content-section" id="transactions-section">
+                <div class="transactions-header">
+                    <h3>Recent Transactions</h3>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option>All Categories</option>
+                            <option>Groceries</option>
+                            <option>Dining</option>
+                            <option>Entertainment</option>
+                            <option>Transportation</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Last 30 Days</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 90 Days</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Merchant</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-table">
+                            <tr>
+                                <td colspan="5" class="loading">Loading transactions...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Goals Section -->
+            <div class="content-section" id="goals-section">
+                <h3>Financial Goals</h3>
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <h4>🏦 Emergency Fund</h4>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>$30,000 / $50,000</span>
+                                <span>60%</span>
+                            </div>
+                        </div>
+                        <p class="goal-deadline">Target: End of 2025</p>
+                    </div>
+                    
+                    <div class="goal-card">
+                        <h4>🏡 House Down Payment</h4>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 20%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>$30,000 / $150,000</span>
+                                <span>20%</span>
+                            </div>
+                        </div>
+                        <p class="goal-deadline">Target: 3 years</p>
+                    </div>
+                    
+                    <div class="goal-card">
+                        <h4>🌴 Retirement Portfolio</h4>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>$225,000 / $500,000</span>
+                                <span>45%</span>
+                            </div>
+                        </div>
+                        <p class="goal-deadline">Target: Age 50</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
